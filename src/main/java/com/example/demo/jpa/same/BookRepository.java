@@ -19,8 +19,11 @@ import com.example.demo.entity.Book;
  * instead of a list of entities when we call the findBookByAuthor() method.
  */
 public interface BookRepository extends JpaRepository<Book, Long> {
-	List<BookRecord> findBookByAuthor(String author);
+	// TODO: Create a method returning a list of BookRecords by author without a
+	// query annotation
 
-	@Query("SELECT new com.example.demo.jpa.same.BookRecord(b.id, b.title, b.author, b.isbn) FROM Book b WHERE b.id = :id")
-	BookRecord findBookById(@Param("id") Long id);
+	// TODO: Create a method returning a BookRecords by id with a query annotation
+
+	// TODO: Create a method returning a list of all books as CustomBookRecords with
+	// a query annotation
 }

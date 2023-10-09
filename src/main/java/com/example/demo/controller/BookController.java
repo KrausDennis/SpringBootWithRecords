@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.jpa.custom.CustomBookRecord;
+import com.example.demo.entity.CustomBookRecord;
 import com.example.demo.jpa.same.BookRecord;
 import com.example.demo.service.BookService;
 

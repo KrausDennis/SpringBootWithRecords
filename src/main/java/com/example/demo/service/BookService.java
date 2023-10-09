@@ -4,25 +4,24 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.jpa.custom.CustomBookRecord;
-import com.example.demo.jpa.custom.CustomBookRepository;
+import com.example.demo.entity.CustomBookRecord;
 import com.example.demo.jpa.same.BookRecord;
 import com.example.demo.jpa.same.BookRepository;
 
 @Service
-public class BookService {
-
-	private final CustomBookRepository customBookRepository;
-	
+public class BookService {	
 	private final BookRepository bookRepository;
 	
-	BookService(CustomBookRepository customBookRepository, BookRepository bookRepository) {
-		this.customBookRepository = customBookRepository;
+	BookService(BookRepository bookRepository) {
 		this.bookRepository = bookRepository;
 	}
 	
 	public List<CustomBookRecord> findAllBooks() {
-		return customBookRepository.findAllBooks();
+		return bookRepository.findAllBooks();
+	}
+	
+	public List<BookRecord> findByAuthor(String author) {
+		return bookRepository.findByAuthor(author);
 	}
 	
 	public BookRecord findById(Long id) {
