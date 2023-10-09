@@ -1,3 +1,3 @@
-package com.example.demo.jpa.custom;
+package com.example.demo.entity;
 
 public record CustomBookRecord(Long id, String title) {}

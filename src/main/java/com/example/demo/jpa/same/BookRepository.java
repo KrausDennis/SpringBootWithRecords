@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.example.demo.entity.Book;
+import com.example.demo.entity.CustomBookRecord;
 
 /**
  * Spring Data Repositories allow us to use records as the return type of the
@@ -23,4 +24,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
 	@Query("SELECT new com.example.demo.jpa.same.BookRecord(b.id, b.title, b.author, b.isbn) FROM Book b WHERE b.id = :id")
 	BookRecord findBookById(@Param("id") Long id);
+
+	@Query("SELECT new com.example.demo.entity.CustomBookRecord(b.id, b.title) FROM Book b")
+	List<CustomBookRecord> findAllBooks();
 }
